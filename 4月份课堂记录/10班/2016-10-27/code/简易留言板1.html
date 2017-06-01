@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	
+	oBtn.onclick = function(){
+		sendMessage();
+	}
+	
+	function sendMessage(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value + '<a href="javascript:;">隐藏</a>';
+		
+		if(oBox.children.length){
+			oBox.insertBefore(oLi,oBox.children[0]);	
+		}else{
+			oBox.appendChild(oLi);		
+		}
+		
+		oTxt.value = '';
+		oLi.children[0].onclick = function(){
+			oBox.removeChild(this.parentNode);
+		}	
+	}
+	
+	oTxt.onkeydown = function(ev){
+		var oEvent = ev || event;
+		if(oEvent.ctrlKey && oEvent.keyCode == 13){
+			sendMessage();	
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+user:<input type="text" value="" id="txt"/>
+<input type="button" value="添加" id="btn"/>
+<ul id="box"></ul>
+</body>
+</html>

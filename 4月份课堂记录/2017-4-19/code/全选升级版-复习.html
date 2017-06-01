@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload = function () {
+        var aInput = document.getElementsByTagName('input');
+        var count = 0;//计数器,也就是帮我们数数的那个人;
+
+        //上面的大按钮点击的时候:
+        aInput[0].onclick = function () {
+            //如果大按钮的是选中状态:
+            if (this.checked == true) {
+                //下面所有的小按钮也选中;
+                for (var i = 1; i < aInput.length; i++) {
+                    aInput[i].checked = true;
+                }
+                //计数器应该等于被选中的小按钮的个数;
+                count = aInput.length -1;
+                document.title =count;
+            } else {//如果大按钮未选中;下面所有的小按钮也不选中;
+                for (var i = 1; i < aInput.length; i++) {
+                    aInput[i].checked = false;
+                }
+                //下面的小按钮都不选中的话,计数器应该等于0;
+                count = 0;
+                document.title = count;
+            }
+        }
+
+        //循环给下面的小按钮加点击事件:
+        for (var i = 1; i < aInput.length; i++) {
+            aInput[i].onclick = function(){
+                //如果下面的某个小按钮是选中状态;
+                if(this.checked == true){
+                    //计数器就加1;
+                    count++;
+                }else{//如果小按钮是未选中状态;
+                    //计数器就减1;
+                    count--;
+                }
+                //如果计数器等于所有被选中的按钮的总个数;
+                if(count == aInput.length - 1){
+                    //那么上面的大按钮也应该被选中;
+                    aInput[0].checked = true;
+                }else{//如果计数器不等于所有被选中的按钮的总个数;
+                    //那么上面的大按钮也不选中;
+                    aInput[0].checked = false;
+                }
+                //在title中打印出计数器的个数方便查看;
+                document.title = count;
+            }
+        }
+
+    }
+</script>
+<body>
+<input type="checkbox">
+<hr>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</body>
+</html>

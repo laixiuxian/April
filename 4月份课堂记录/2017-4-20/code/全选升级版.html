@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" >
+<hr/>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<script>
+    window.onload=function () {
+        var btn=document.getElementsByTagName('input');
+        var count=0;
+
+        btn[0].onclick=function () {
+            if(this.checked){
+                for (var i=1;i<btn.length;i++){
+                    btn[i].checked=true;
+                }
+                count=btn.length-1;
+            }else{
+                for (var i=1;i<btn.length;i++){
+                    btn[i].checked=false;
+                }
+                count=0;
+            }
+        }
+
+        for(var i=1;i<btn.length;i++){
+            btn[i].onclick=function () {
+                if(this.checked){
+                    count++;
+                }else{
+                    count--;
+                }
+                if(count==btn.length-1){
+                    btn[0].checked=true;
+                }else{
+                    btn[0].checked=false;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

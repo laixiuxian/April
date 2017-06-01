@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#ad {
+	width: 100%;
+	height: 300px;
+	background: red;
+}
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('ad');
+	var timer = null;
+	timer = setTimeout(function(){
+		oDiv.style.display = 'none';	
+	},3000);
+	
+	oDiv.onmouseover = function(){
+		clearTimeout(timer);	
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="ad"></div>
+</body>
+</html>

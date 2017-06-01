@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+        }
+
+        #div {
+            width: 298px;
+            height: 38px;
+            border: #fff 1px solid;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #div span {
+            display: block;
+            width: 298px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            color: #fff;
+            font-family: "Microsoft YaHei";
+            font-size: 18px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #div p {
+            position: absolute;
+            opacity: 0;
+            transition: all 300ms ease-in-out;
+        }
+
+        .line1 {
+            width: 0;
+            border: #ececec 1px solid;
+            left: -100%;
+            top: -1px;
+        }
+
+        .line2 {
+            height: 0;
+            border: #ececec 1px solid;
+            right: -1px;
+            top: -100%;
+        }
+
+        .line3 {
+            width: 0;
+            border: #ececec 1px solid;
+            bottom: -1px;
+            right: -100%;
+        }
+
+        .line4 {
+            height: 0;
+            border: #ececec 1px solid;
+            left: -1px;
+            bottom: -100%;
+        }
+
+        #div:hover p.line1 {
+            width: 296px;
+            left: 0;
+            opacity: 1;
+        }
+
+        #div:hover p.line2 {
+            height: 36px;
+            top: 0;
+            opacity: 1;
+        }
+
+        #div:hover p.line3 {
+            width: 296px;
+            right: 0;
+            opacity: 1;
+        }
+
+        #div:hover p.line4 {
+            height: 36px;
+            bottom: 0;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <span>我是按钮</span>
+    <p class="line1"></p>
+    <p class="line2"></p>
+    <p class="line3"></p>
+    <p class="line4"></p>
+</div>
+</body>
+</html>

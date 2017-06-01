@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #box1{
+            width: 300px;
+            height: 150px;
+            background: green;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 99;
+        }
+        #box2{
+            width: 300px;
+            height: 150px;
+            background: red;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 2;
+        }
+        #img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv1=document.getElementById('box');
+            var oDiv2=document.getElementById('box1');
+            var oDiv3=document.getElementById('box2');
+            var oImg=document.getElementById('img');
+            var speed=2;
+            var timer1=null;
+            var timer2=null;
+
+            oDiv3.onmouseover= function(){
+                clearInterval(timer1);
+                timer1=setInterval(function(){
+                    if(oImg.offsetTop<=-476)
+                    {
+                        clearInterval(timer1);
+                    }
+                    else
+                    {
+                        oImg.style.top=oImg.offsetTop-4+'px';
+                    }
+                },30);
+            };
+            oDiv3.onmouseout= function(){
+                clearInterval(timer1);
+            };
+            oDiv2.onmouseover= function(){
+                clearInterval(timer2);
+                timer2=setInterval(function(){
+                    if(oImg.offsetTop>=0)
+                    {
+                        clearInterval(timer2);
+                    }
+                    else
+                    {
+                        oImg.style.top=oImg.offsetTop+4+'px';
+                    }
+                },30);
+            };
+            oDiv2.onmouseout= function(){
+                clearInterval(timer2);
+            };
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <img src="123.jpg" alt="" id="img"/>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</div>
+
+</body>
+</html>

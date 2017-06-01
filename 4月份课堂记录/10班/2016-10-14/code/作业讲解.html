@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oS1 = document.getElementById('s1');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function(){
+		var a = oTxt1.value;
+		var b = oTxt2.value;
+		var c = oS1.value;
+		alert(typeof a);//string
+		//c == '+' && alert(a+b);
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<select id="s1">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+	<option value="%">%</option>
+</select>
+<input type="text" id="txt2" />
+<input type="button" value="按钮" id="btn" />
+</body>
+</html>

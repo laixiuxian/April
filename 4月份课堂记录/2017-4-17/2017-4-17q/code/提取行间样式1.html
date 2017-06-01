@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            function toBig(){
+                var oBox = document.getElementById('box');
+                oBox.style.width='200px';
+                oBox.style.height='200px';
+                oBox.style.backgroundColor='green';
+            }
+            function toSmall(){
+                var oBox = document.getElementById('box');
+                oBox.style.width='100px';
+                oBox.style.height='100px';
+                oBox.style.backgroundColor='red';
+            }
+            var oDiv = document.getElementById('box');
+            oDiv.onmouseover = toBig;
+            oDiv.onmouseout = toSmall;
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+
+</body>
+</html>

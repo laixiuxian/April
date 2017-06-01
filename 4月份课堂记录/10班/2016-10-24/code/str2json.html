@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+/*var str = 'a=1&b=2&c=3';
+//先切割字符串
+var arr = str.split('&');
+//console.log(arr);
+var json = {};
+for(var i = 0; i < arr.length; i++){
+	//把数组中的每一个用'='在切一下;返回的是一个新的数组[a,1],[b,2],[c,3]
+	var arr2 = arr[i].split('=');
+	//console.log(arr2);
+	//往json中添加,数组中的第一个相当于是json的name,数组中的第二个相当于是json的value;
+	json[arr2[0]] = arr2[1];
+}
+console.log(json);
+*/
+function str2json(str){
+	var arr = str.split('&');
+	var json = {};
+	for(var i = 0; i < arr.length; i++){
+		var arr2 = arr[i].split('=');
+		json[arr2[0]] = arr2[1];	
+	}
+	return json;
+}
+console.log(str2json('a=1&b=2&c=3'));
+</script>
+</head>
+
+<body>
+</body>
+</html>

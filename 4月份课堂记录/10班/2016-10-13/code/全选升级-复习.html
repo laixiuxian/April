@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aInput = document.getElementsByTagName('input');
+	var count = 0;
+	aInput[0].onclick = function(){
+		if(this.checked == true){
+			for(var i = 1; i < aInput.length; i++){
+				aInput[i].checked = true;	
+			}
+			count = aInput.length - 1;
+			document.title = count;		
+		}else{
+			for(var i = 1; i < aInput.length; i++){
+				aInput[i].checked = false;	
+			}		
+			count = 0;
+			document.title = count;
+		}
+	}
+	
+	for(var i = 1; i < aInput.length; i++){
+		aInput[i].onclick = function(){
+			if(this.checked == true){
+				count++;	
+			}else{
+				count--;	
+			}
+			
+			if(count == aInput.length -1){
+				aInput[0].checked = true;
+			}else{
+				aInput[0].checked = false;	
+			}
+			document.title = count;	
+		}	
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="checkbox" />
+<hr/>
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+</body>
+</html>

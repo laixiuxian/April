@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 100%;
+	height: 400px;
+	background: black;
+	color: #fff;
+	font-size:40px;
+	line-height:400px;
+	text-align:center;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oDate = new Date();
+	oDate.setFullYear(2016,10,11);
+	oDate.setHours(0,0,0,0);
+	//alert(oDate);     //Fri Nov 11 2016 00:00:00
+	//alert(new Date());//Tue Oct 18 2016 13:41:24
+	
+}
+</script>
+</head>
+
+<body>
+<div id="box">距离2016年11月11日还有:xx天xx时xx分xx秒</div>
+</body>
+</html>

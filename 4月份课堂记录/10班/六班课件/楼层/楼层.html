@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>楼层</title>
+		<style type="text/css">
+		*{margin:0;padding: 0;}
+			#daohang{
+				width: 80px;
+				height: 510px;
+				background-color:#fff;
+				position: fixed;
+				left: 30px;
+				top:100px;
+				border-radius: 5px;
+				border:1px solid #ddd;
+				border-radius: 1px solid #ddd;
+				display: none;
+			}
+			#daohang ul li{
+				list-style: none;
+				width: 60px;
+				height: 40px;
+				border-bottom: 1px solid #ddd;
+				color:#666;
+				font-size: 12px;
+				font-family: "微软雅黑";
+				line-height: 40px;
+				text-align: center;
+				margin: 0 auto;
+				cursor: pointer;
+			}
+			#daohang ul li:hover{
+				color:#ff00ff;
+			}
+			#daohang ul li.active{
+				background: #f10180;
+				color:#fff;
+			}
+			#head{
+				width: 100%;
+				height: 600px;
+				background-color: red;
+			}
+			#main{
+				width: 1000px;
+				height: 1000px;
+				background:green;
+				margin:0 auto;
+			}
+			#main ul li{
+				list-style: none;
+				width: 1000px;
+				height: 800px;
+				font-size: 25px;
+				font-weight:bold;
+			}				
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+		<div id="daohang">
+			<ul>
+				<li>精选</li>
+				<li>女装</li>
+				<li>鞋包</li>
+				<li>男士</li>
+				<li>运动</li>
+				<li>饰品</li>
+				<li>美妆</li>
+				<li>母婴</li>
+				<li>居家</li>
+				<li>国际</li>
+				<li>生活</li>
+				<li>预告</li>
+			</ul>
+		</div>
+		<div id="head">
+			
+		</div>
+		<div id="main">
+			<ul>
+				<li style="background: #FFA500;">精选</li>
+				<li style="background: #000000;">女装</li>
+				<li style="background: #666666;">鞋包</li>
+				<li style="background: #9ACD32;">男士</li>
+				<li style="background: #F10180;">运动</li>
+				<li style="background: #7FFF00;">饰品</li>
+				<li style="background: #666666;">美妆</li>
+				<li style="background: #DDDDDD;">母婴</li>
+				<li style="background: #008000;">居家</li>
+				<li style="background: #999999;">国际</li>
+				<li style="background: #FFA500;">生活</li>
+				<li style="background: #9ACD32;">预告</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript">
+			var k=0;
+			$(window).scroll(function(){
+				//console.log(1);
+				if(k==0){
+				var sTop= $(window).scrollTop();
+				//当滚动到一定高度 的时候才显示
+				if(sTop>600){
+					$('#daohang').fadeIn();
+				}else{
+					$('#daohang').fadeOut();
+				}
+				var mainLi=$('#main ul li');
+				mainLi.each(function(){
+					var _index=$(this).index();
+					var _height=$(this).offset().top+600;
+					if(sTop<_height){
+					$('#daohang ul li').eq(_index).addClass('active').siblings().removeClass('active');
+					return false;
+					} 
+				})	
+				}											
+			})
+			$('#daohang ul li').click(function(){
+				k=1;
+				var _index=$(this).index();
+				$(this).addClass('active').siblings().removeClass('active');
+				var _height=$('#main ul li').eq(_index).offset().top+600;
+				$('html,body').animate({scrollTop:_height},500,function(){
+					k=0;
+				});
+				
+			});
+		</script>
+	</body>
+</html>

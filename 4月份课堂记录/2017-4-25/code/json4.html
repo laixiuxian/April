@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var json = {
+            a:1,
+            b:2,
+            c:3,
+            d:4
+        };
+        //修改某一项的值;
+        json.a = 12;
+        for(var name in json){
+            console.log(json[name]);
+        }
+        alert(json.a);//12;
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oBtn = document.getElementById('btn');
+	var oTxt = document.getElementById('text');
+	
+	oBtn.onclick = function(){
+		var oVal = oTxt.value;
+		var oP = document.createElement('P');
+		oP.innerHTML = oVal;
+		oBox.appendChild(oP);
+	};
+}
+</script>
+</head>
+<body>
+<div id="parent">
+	<h4>留言内容：</h4>
+	<div id="box"><em>这里会显示留言内容……</em></div>
+	<textarea id="text"></textarea><br />
+	<input id="btn" type="button" value="发表留言" />
+</div>
+</body>
+</html>

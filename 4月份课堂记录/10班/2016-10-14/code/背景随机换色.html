@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 200px;
+	height: 200px;
+	background: red;
+}
+</style>
+<script>
+function rnd(n,m){
+	return parseInt(Math.random() * (m - n) + n);
+}
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	oBox.onclick = function(){
+		var r = rnd(0,256);
+		this.style.background = 'rgb('+r+','+r+','+r+')';
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

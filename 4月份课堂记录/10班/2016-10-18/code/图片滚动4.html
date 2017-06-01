@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 300px;
+	height: 300px;
+	border: #000 1px solid;
+	margin: 100px auto;
+	overflow: hidden;
+	position: relative;
+}
+#box img {
+	position:absolute;
+	left: 0;
+	top: 0;
+}
+
+#box a {
+	display: block;
+	width: 300px;
+	height: 150px;
+	z-index: 999;
+	left: 0;
+	background: red;
+	position: absolute;
+	opacity: 0;
+}
+
+#up {
+	top: 0;
+}
+
+#down {
+	bottom: 0;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oUp = document.getElementById('up');
+	var oDown = document.getElementById('down');
+	var oImg = document.getElementById('img');
+	
+	var count = 0;
+	var timer = null;
+	oUp.onmouseover = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			count-=10;
+			if(count <= -468){
+				clearInterval(timer);
+				count = -468;	
+			}
+			oImg.style.top = count + 'px';		
+		},30);
+	}
+	
+	oUp.onmouseout = function(){
+		clearInterval(timer);	
+	}
+	
+	oDown.onmouseover = function(){
+		timer = setInterval(function(){
+			count+=10;
+			if(count >= 0){
+				clearInterval(timer);
+				count = 0;	
+			}
+			oImg.style.top = count + 'px';	
+		},30);	
+	}
+	
+	oDown.onmouseout = function(){
+		clearInterval(timer);	
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+	<a href="javascript:;" id="up"></a>
+	<img src="tu.jpg" alt="" id="img" />
+	<a href="javascript:;" id="down"></a>
+</div>
+</body>
+</html>

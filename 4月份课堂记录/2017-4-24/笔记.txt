@@ -1,0 +1,81 @@
+﻿复习:
+    1.
+        undefined出现的情况:
+            1>.访问一个不存在的属性;
+            2>.生命变量未赋值;
+            3>.函数写了return没写具体的返回值;
+
+    2.
+        获取非行间样式:
+            IE:
+                obj.currentStyle[attr];高级浏览器报undefined;
+
+            chrome&Firefox:
+                getComputedStyle(obj,false)[attr];
+
+            function getStyle(obj,attr){
+                if(obj.currentStyle){
+                    return obj.currentStyle[attr];
+                }else{
+                    return getComputedStyle(obj,false)[attr];
+                }
+            }
+
+    3.
+        var arr = [];
+        arr.push():往数组的后面添加一位;
+        arr.pop():从后面删除一位;
+        arr.shift():往前面添加一位;
+        arr.unshift():从前面删除一位;
+        arr.concat(arr1,arr2···);数组连接;
+        arr.join('连接方式'):数组连接;数组转字符串;
+        arr.reverse():数组翻转;
+        arr.sort(function(n1,n2){//数组排序;
+            return n1 - n2;
+        })
+
+        数组的万能操作:
+            删除:arr.splice(开始位置,删除个数);
+            替换:arr.splice(开始的位置,删除的个数,替换的元素1,替换的元素2···);
+            添加: arr.splice(开始的位置,0,添加的元素1,添加的元素2···);
+
+    4.
+        return:
+            函数执行完成之后的值;
+            return 之后的代码都不执行;
+            return 没写具体的值默认返回undefined;
+
+-----------------------------------------------------
+函数在哪里定义不重要,在哪里调用才重要;
+
+getStyle(obj,attr):--->准确来说,是获取生效的样式;
+
+new Date():当前的系统时间;             //获取时间
+    var oYear = oDate.getFullYear();年
+    var oMonth = oDate.getMonth();月,从0开始,0代表1月;
+    var oDay = oDate.getDate();日
+    var oHours = oDate.getHours();时
+    var oMin = oDate.getMinutes();分
+    var oSec = oDate.getSeconds();秒
+    var oWeek = oDate.getDay();周几;从0开始;0是周日;
+
+innerHTML: 元素的内容;
+
+
+
+
+定时器:
+    隔多久做一件什么事儿:
+    setInterval(什么事儿,时间);
+    setInterval(fn,time):time: 以毫秒为单位;1s= 1000ms;重复执行,不会停止;函数名不加括号    
+
+    setTimeout(fn,time):time: 以毫秒为单位;1s= 1000ms;只执行一次;函数名不加括号
+
+关闭定时器:
+    clearInterval(定时器的名字);
+
+定时器的bug:
+    越点越快;
+
+定时器bug解决[定时器的使用原则]:
+    定时器先关后开;

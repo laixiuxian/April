@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #small {
+            width: 175px;
+            height: 175px;
+            border: #000 1px solid;
+            float: left;
+            position: relative;
+        }
+
+        #small img {
+            width: 175px;
+            height: 175px;
+        }
+
+        #small p {
+            width: 70px;
+            height: 70px;
+            background: yellow;
+            opacity: .5;
+            border: red 1px solid;
+            left: 0;
+            top: 0;
+            position: absolute;
+            display: none;
+        }
+
+        #big {
+            width: 400px;
+            height: 400px;
+            border: #000 1px solid;
+            float: left;
+            margin-left: 20px;
+            overflow: hidden;
+            position: relative;
+            display: none;
+        }
+
+        #big img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oSmall = document.getElementById('small');
+            var oSimg = document.getElementById('simg');
+            var oMask = document.getElementById('mask');
+            var oBig = document.getElementById('big');
+            var oBimg = document.getElementById('bimg');
+
+            oSimg.onmouseover = function(){
+                oMask.style.display = 'block';
+                oBig.style.display = 'block';
+            };
+
+            oSmall.onmouseout = function(){
+                oMask.style.display = 'none';
+                oBig.style.display = 'none';
+            };
+
+            oSmall.onmousemove = function(ev){
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - oMask.offsetLeft;
+                var disY = oEvent.clientY - oMask.offsetTop;
+
+                oMask.style.left = disX + 'px';
+                oMask.style.top = disY + 'px';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="small">
+    <img src="s.jpg" alt="" id="simg">
+    <p id="mask"></p>
+</div>
+<div id="big">
+    <img src="b.jpg" alt="" id="bimg">
+</div>
+</body>
+</html>

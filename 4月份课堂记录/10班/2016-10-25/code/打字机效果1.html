@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{
+	width: 50px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	color: #fff;
+	background:red;
+	float:left;
+	border-radius: 50%;
+	margin:5px;
+}
+</style>
+<script>
+window.onload = function(){
+	var str = '的时候回出错,会认为括号没写完,的时候回出错,会认为括号没写完,的时候回出错,会认为括号没写完,的时候回出错,会认为括号没写完,的时候回出错完,解决方法是';
+	var timer = null;
+	var iNow = 0;
+	timer = setInterval(function(){
+		iNow++;
+		if(iNow == str.length - 1){
+			clearInterval(timer);	
+		}
+		var oDiv = document.createElement('div');
+		oDiv.innerHTML = str.charAt(iNow);		
+		document.body.appendChild(oDiv);	
+	},30);
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>

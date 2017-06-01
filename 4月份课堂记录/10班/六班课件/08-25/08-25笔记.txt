@@ -1,0 +1,231 @@
+html5+css3
+----------------------------------
+用户(网民)：
+	pc：
+	移动端：用户数量太多
+
+兼容性：
+	pc: chrome FF IE
+	移动端：webkit(chrome、safari、uc)
+		手机大小
+
+html5+css3:
+	html: 标签、属性  4
+	css:  样式	  2
+		布局 pc(电脑)
+
+	JavaScript:基础
+
+	什么是html5，css3？
+	确实是一个版本升级
+		目的：为了移动端
+
+	移动端：手机(phone)、pad、tv
+		
+
+	html5: 新标签、新属性、新功能
+	css3:	新样式
+
+新标签：
+	header,footer,nav,aside,section,canvas....
+
+	非语义化标签：
+		canvas,video,audio...
+	语义化标签:
+		header,footer,nav.....
+
+
+html5更改了一些东西
+     1.文档头(文档说明)——精简
+	<!doctype html> —向下兼容
+
+	之前文档头：
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+     2.文档编码：
+	<meta charset="utf-8">
+
+	之前文档编码：
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+     3. 单标签最后斜杠 可以不写
+	<br> 之前的写法<br />
+
+     4.新标签:
+	header，nav.....
+           有用标签(功能标签)：
+		canvas,video,audio...
+
+		canvas—画图、性能很高
+		video—播片
+
+		播放视频——flash（之前）
+		audio-播放音频
+		
+          '没'用标签(结构性标签)：
+	        header,nav,footer,section....
+
+		优化、语义化强
+-----------------------------------
+css3: 新样式
+	圆角、渐变、动画、变形....
+-----------------------------------
+js新增一些东西：
+1. 选择器
+	document.querySelectorAll(选择器)   选出来一组元素
+	
+	document.querySelector(选择器)  第一个元素
+2. class
+	obj.classList
+		.add(sClass)    添加class
+		.remove(sClass)  删除class
+		.contians(sClass)  是否有class
+		.toggle(sClass)	 切换class
+3. 自定义属性
+	<input index="aaa" >
+
+	向后兼容
+
+	data-xxx   标准自定义属性
+
+	选项卡：
+		aBtn[i].index=i;
+
+	和js相关操作：
+		obj.dataset.xxx
+		oBtn.dataset.xxx=1;
+
+	data-show-index ->  showIndex
+	
+	data-a-b-c-d-id=1
+
+	好处：
+		1. 以后不会再有data-属性
+		2. 性能高(组织说),性能鸡肋
+			getAttribute-> 257
+			dataset	->  1851
+		3. 容易循环(遍历)，属性
+
+--------------------------------------------------
+新增标签：
+<header></header> 页眉、头部
+<footer></footer> 页脚、底部
+<nav></nav>	  导航
+<hgroup></hgroup>  标题组合
+	<h1></h1>
+	<h3></h3>
+
+<section></section>	区块
+<article></article>	文章、博客、说明
+<aside></aside>		侧边、边栏
+	aside  如果放到section 侧边、友情链接、广告
+	aside  如果放到article 相关文章
+
+<figure></figure>	用于对元素进行组合。一般用于图片或视频
+<figcaption></figcaption>  图片相关说明、标题
+
+<time></time>		时间、标识
+<datalist></datalist>	数据列表
+	<input type="text" list="a">
+	<datalist id="a">
+		<option></option>
+	</datalist>
+
+<details></details>	描述
+	<summary></summary>	概要、标题
+	<details open>
+		<summary></summary>
+		<p></p>
+	</details>
+
+<dialog></dialog>	对话
+	<dialog open>
+	    <dt>老师： 放学</dt>
+	    <dd>学生： 不要</dd>
+	    <dt>老师: 赶紧</dt>
+	    <dd>学生: 不要</dd>
+	</dialog>
+
+<address></address>	地址
+<mark></mark>		标记
+<keygen></keygen>	秘钥
+	<keygen name="key"></keygen>
+<progress></progress>	进度条
+<meter></meter>		进度条
+
+本身标签不兼容的：
+	想兼容低版本：
+
+	html5shiv.js
+
+	https://en.wikipedia.org/wiki/HTML5_Shiv
+
+	<!--[if lt IE 9]>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <![endif]-->
+----------------------------------------------
+css2选择器：
+	*{}
+	div{}
+	#div{}
+	.red{}
+	div ul li{}
+	div,ul,li{}
+
+css3:选择器
+
+	属性选择器：
+	E[name]		属性名是name的元素
+	E[name=value]	属性名是name值为value元素
+	E[name~=value]	包含value这个单词元素
+	E[name^=value]  以value这个词开头的元素
+	E[name$=value]  以value这个词结尾的元素
+	E[name*=value]  只要包含value这个东西的元素
+	E[name|=value]  以value-或者纯value开头的东西
+	
+	<a href="xxxpdfxx">
+	<a href="xxxdocxx">
+
+	a[href*=pdf]{}
+	a[href*=doc]{}
+	----------------------------
+	结构性伪类选择器：
+	* E:nth-child(n)	 正好第n个  ，从1开始计数
+		nth-child(odd)   奇数
+		nth-child(even)	 偶数
+		nth-child(n)	所有数
+		nth-child(2n)	2的倍数
+		
+	E:nth-last-child(n)  倒数第n个
+
+	E:first-child	nth-child(1)正数第一个
+	E:last-child	nth-last-child(1)倒数第一个
+
+	E:nth-of-type(n)   类型的某个元素
+	E:nth-last-of-type(n)
+	----------------------------
+	表单选择器：
+	E:disabled	不能用表单元素
+	E:enabled	可用的表单元素
+	E:checked	选中的表单元素
+
+	E:empty		空元素
+	E:target	被锚点锚住元素
+	E:not(some)	除了some的东西元素
+
+	----------------------------
+	文本伪类选择器：
+	E:first-line	第一行文本
+	E:first-letter	第一个字
+
+	E::selection{}  选中文本   超伪类
+
+		::selection{} 所有
+
+	E::after{}	之后
+	E:after{}
+		content:''
+
+	E::before{}	之前
+	E:before{}
+		content:''

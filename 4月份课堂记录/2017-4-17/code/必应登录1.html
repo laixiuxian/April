@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+            var oDiv = document.getElementById('box');
+            oBtn.onclick = function(){
+                alert(oDiv.style.display);
+                if(oDiv.style.display == 'block'){
+                    oDiv.style.display = 'none';
+                }else{
+                    oDiv.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="box"></div>
+</body>
+</html>

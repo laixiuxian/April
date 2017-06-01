@@ -1,0 +1,84 @@
+﻿回顾:
+	1.eval json的时候回出错,会认为括号没写完,解决方法是加'('+json+')';
+	
+	2.配合循环使用:
+		break:中断终止,
+		
+		continue:跳出当前,后面代码继续执行;
+	
+	3.严格模式:
+		干掉了with
+		声明变量必须加var
+		if(){},for(){}不允许定义函数;
+		不兼容;
+	
+	4.select
+		oS.options获取select下面所有的option选项;
+		selectedIndex:当前选中那项的索引;
+		new Option('文本值','value值');
+		aO[selectedIndex].text;
+		os.options.remove(要删除那项的索引);
+		os.options.add(new option);
+	
+	5.BOM:
+		window.open('url','_self');
+			在线运行代码;
+		window.close();
+	
+	6.DOM关系:
+		子元素：
+			父级.children;
+			
+		父元素：
+			obj.parentNode;
+			
+		上一个兄弟节点:
+			obj.previousElemengtSibling || obj.previousSibling
+		
+		下一个兄弟节点:
+			obj.nextElementSibling || obj.nextSibling;
+		
+		第一个子元素
+			父级.firstELementChild || 父级.firstChild;
+		
+		最后一个子元素
+			父级.lastElementChild || 父级.lastChild;
+
+创建元素:
+	document.createElement('tagname');
+	
+添加:	
+	往后面添加一条：
+		父级.appendChild(要添加的元素);
+		
+	往前面添加一条：有类似剪切的功能;
+		父级.insertBefore(要添加的元素,在谁的前面);
+
+删除元素：
+	父级.removeChild(要删除的元素);
+
+window.onscroll: 滚动滚动条的时侯触发;
+window.onresize: 缩放浏览器窗口的时侯触发;
+
+可视区宽：document.documentElement.clientWidth
+
+可视区高：document.documentElement.clientHeight
+
+			getStyle			offsetWidth/Height
+单位：			带单位				不带单位;
+数据类型		string				number
+宽/高			本身宽高			盒子模型的宽高
+对于隐藏		可以获取			获取不到[0];
+
+滚动距离:横向和纵向;
+	纵向：
+		document.body.scrollTop;兼容chrome;
+		document.documentElement.scrollTop;火狐和IE
+		var scrollT = document.documentElement.scrollTop || document.body.scrollTop	
+	
+	横向：
+		document.body.scrollLeft:兼容chrome;
+		document.documentElement.scrollLeft:火狐和IE
+	var scrollT = document.documentElement.scrollLeft || document.body.scrollLeft;
+		
+事件可以连等;

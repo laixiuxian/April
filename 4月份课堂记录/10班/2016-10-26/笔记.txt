@@ -1,0 +1,73 @@
+回顾:
+	1.创建元素：
+		document.createElement('tagname');
+	2.添加元素：
+		父级.appendChild()：往后面添加
+		父级.insertBefore(要添加的元素,在谁的前面);往前面添加
+	3.删除元素
+		父级.removeChild(要删除的元素);
+	4.可视区宽高
+		document.documentElement.clientWidth;
+		document.documentElement.clientHeight;
+	5.物体本身的宽高
+		obj.offsetHeight;
+		obj.offsetWidth;
+	6.滚动距离：
+		document.body.scrollTop;
+		document.documentElement.scrollTop;
+		
+		document.body.scrollLeft;
+		document.documentElement.scrollLeft;
+	7.新的事件：
+		window.onscroll:滚动滚动条的时候触发;
+		window.onresize:缩放浏览器窗口的时候触发;
+	8.事件可以连等;
+	9.getStyle和offsetWidth/height的区别：	
+		
+			getStyle   	offsetWidth/height
+单位：		带单位		不带单位
+宽高			本身宽高		盒子模型宽高
+数据类型		string		number
+隐藏			可以获取		获取不到
+----------------------------------------------------------------
+8px来自于margin;
+
+物体到左边的距离[到有定位父级的距离]:
+	offsetLeft:
+物体到上边的距离[到有定位父级的距离]:
+	offsetTop:
+
+obj.parentNode:结构上的父级;
+obj.offsetParent:定位的父级;最终到body,body没有定位父级[null]
+
+scrollHeight: 内容高度;如果内容高度小于盒子模型的高度，取值盒子模型的高度,否则取值内容的实际高度;
+
+onfocus:输入框聚焦的时候触发；
+onblur:输入框失去焦点的时候触发；
+focus():让输入框强行获得焦点;
+
+图片延迟加载：节省带宽，节省资源，省钱;
+查看图片加载的方法： F12-->network
+
+关于自定义属性:	
+	设置自定义属性:setAttribute('属性名',value)
+	获取自定义属性:getAttribute('属性名')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

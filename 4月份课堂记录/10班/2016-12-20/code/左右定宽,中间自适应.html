@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap {
+            width: 100%;
+            display: -webkit-box;
+        }
+
+        #wrap .left,
+        #wrap .right{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        #wrap .mid {
+            height: 200px;
+            background: green;
+            -webkit-box-flex:1;
+            min-width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="left"></div>
+    <div class="mid"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>

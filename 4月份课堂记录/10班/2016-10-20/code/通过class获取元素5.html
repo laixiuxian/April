@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function findInArr(n,arr){
+	for(var i = 0; i < arr.length; i++){
+		if(arr[i] == n)return true;	
+	}
+	return false;
+}
+
+//getByClass(oParent,sClass);//oParent:从哪个父级下面获取;sClass:要获取的是哪个class名字;
+function getByClass(oParent,sClass){
+	if(oParent.getElementsByClassName){
+		return oParent.getElementsByClassName(sClass);
+	}else{
+		var aEle = oParent.getElementsByTagName('*');
+		var arr = [];
+		for(var i = 0; i < aEle.length; i++){
+			var tmp = aEle[i].className.split(' ');	
+			if(findInArr(sClass,tmp) == true){
+				arr.push(aEle[i]);	
+			}
+		}
+		return arr;	
+	}
+}
+window.onload = function(){
+	var aRed = getByClass(document,'red');
+	for(var i = 0; i < aRed.length; i++){
+		//alert(aRed[i]);	//4个符合需求的标签;
+		aRed[i].style.background = 'red';
+	}
+}
+</script>
+</head>
+<body>
+<div class="red">div</div>
+<p class="blue">p标签</p>
+<span class="red blue" style="display: block;">span</span>
+<h1 class="blue red">h1</h1>
+<h3 class="red1">h3</h3>
+<h5 class="red2 blue red">h5</h5>
+<ul id="wrap">
+	<li class="blue"></li>
+    <li class="blue1"></li>
+    <li class="red"></li>
+    <li class="redblue"></li>
+    <li class="blue green"></li>
+    <li class="yellow"></li>
+</ul>
+
+</body>
+</html>

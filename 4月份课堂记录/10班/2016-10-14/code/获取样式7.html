@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div {
+	width: 200px;
+	height: 200px;
+	background: blue;	
+}
+</style>
+<script>
+function getStyle(obj,attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];	
+	}else{
+		return getComputedStyle(obj,false)[attr];
+	}	
+}
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oDiv = document.getElementById('div');
+	oBox.onclick = function(){
+		alert(getStyle(oBox,'width'));
+	}
+	oDiv.onclick = function(){
+		alert(getStyle(oDiv,'height'));	
+	}
+	//getStyle(obj,width);--->200px
+}
+</script>
+</head>
+
+<body>
+<div id="box" style="width: 400px; height: 400px; background: green;"></div>
+<div id="div"></div>
+</body>
+</html>

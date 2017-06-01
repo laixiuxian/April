@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	margin: 50px auto;
+	width: 310px;
+}
+#box div{
+	width: 300px;
+	height: 300px;
+	border: #000 1px solid;
+	display: none;
+	font-size: 50px;
+	line-height: 300px;
+	text-align: center;
+}
+
+.on {
+	background: red;
+	color: #fff;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oPrev = document.getElementById('prev');
+	var oNext = document.getElementById('next');
+	var aBtn = oBox.getElementsByTagName('input');
+	var aDiv = oBox.getElementsByTagName('div');
+	
+	for(var i = 0; i < aBtn.length; i++){
+		aBtn[i].index = i;
+		aBtn[i].onclick = function(){
+			for(var i = 0; i < aBtn.length; i++){
+				aBtn[i].className = '';
+				aDiv[i].style.display = 'none';	
+			}	
+			this.className = 'on';
+			aDiv[this.index].style.display = 'block';
+		}
+	}	
+	
+	oNext.onclick = function(){
+		for(var i = 0; i < aBtn.length; i++){
+			aBtn[i].className = '';	
+		}
+		aBtn[2].className = 'on';
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+<a href="javascript:;" id="prev">←</a>
+<input type="button" value="按钮1" class="on"/>
+<input type="button" value="按钮2" />
+<input type="button" value="按钮3" />
+<a href="javascript:;" id="next">→</a>
+<div style="display: block;">div1</div><div>div2</div><div>div3</div>
+</div>
+</body>
+</html>

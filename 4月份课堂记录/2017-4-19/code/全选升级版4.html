@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload = function () {
+        var aInput = document.getElementsByTagName('input');
+        var count = 0;//数数的那个人;
+
+        aInput[0].onclick = function () {
+            //如果当前按钮为选中状态:
+            if (this.checked == true) {
+                for (var i = 1; i < aInput.length; i++) {
+                    aInput[i].checked = true;
+                }
+            } else {
+                for (var i = 1; i < aInput.length; i++) {
+                    aInput[i].checked = false;
+                }
+            }
+        };
+
+        //循环给下面的小按钮加点击事件:
+        for (var i = 1; i < aInput.length; i++) {
+            //当下面的小按钮点击的时候:
+            aInput[i].onclick = function(){
+                //如果当前点击的按钮是选中状态;
+                if(this.checked == true){
+                    //name数数的那个人就要加1;
+                    count++;
+                }else{
+                    //如果按钮是未选中状态,name数数的人就减去1;
+                    count--;
+                }
+                //如果下面的小按钮都选中了
+                if(count == aInput.length - 1){
+                    //那么久让上面的大按钮也选中;
+                    aInput[0].checked = true;
+                }else{
+                    //否则上面的大按钮也不选中;
+                    aInput[0].checked = false;
+                }
+                //把选中的小按钮的个数打印到title上.
+                document.title = count;
+            }
+        }
+    }
+</script>
+<body>
+<input type="checkbox">
+<hr>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</body>
+</html>

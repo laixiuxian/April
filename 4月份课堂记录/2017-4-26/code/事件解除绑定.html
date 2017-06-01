@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script>
+        //obj：要绑定事件的元素，sev:不加on的事件名;fn:函数
+        function addEvent(obj,sEv,fn){
+            if(obj.addEventListener){
+                obj.addEventListener(sEv,fn,false);
+            }else{
+                obj.attachEvent('on'+sEv,fn);
+            }
+        }
+
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            function show1() {
+                alert('1');
+            };
+            function show2() {
+                alert('2');
+            };
+            addEvent(oBtn,'click',show1);
+            addEvent(oBtn,'click',show2);
+
+            alert(oBtn.removeEventListener);//IE8-报undefined;
+            oBtn.removeEventListener('click',show2,false);
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+</body>
+</html>

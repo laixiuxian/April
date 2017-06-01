@@ -1,0 +1,23 @@
+设置自定义属性；
+	obj.setAttribute(name,value);
+
+获取自定义属性:
+	obj.getAttributr(name);
+
+onkeydown:键盘按下;
+
+onkeyup：键盘抬起;
+
+oEvent.keyCode：键码
+	
+oEvent.ctrlKey --->ctrl
+
+oEvent.altKey --->alt
+
+oEvent.shiftKey ---> shift
+
+事件委托：子元素的事件委托给父元素执行，也就是给未来元素加事件的方法:
+	var oTarget = oEvent.srcElement || oEvent.target
+	if(oTarget.tagName == "LI"){
+		//code 
+	}

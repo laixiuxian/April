@@ -1,0 +1,68 @@
+﻿transform:
+    rotate(30deg);旋转;
+
+    translateX(300px);不会造成浏览器重绘重排版,性能非常高.移动端会开启手机硬件加速;
+    translateY(300px);不会造成浏览器重绘重排版,性能非常高.移动端会开启手机硬件加速;
+
+    scale(倍数):放大或者缩小;
+
+    skew(40deg):倾斜,斜切;
+
+background: rgba(0,0,0,.4)  a: 指的是alpha(),透明度;取值0-1;
+
+border-radius: 10px上 20px右 30px下 40px左;
+
+text-shadow: 10px[X] 10px[Y] 10px[blur] red[color];
+
+-webkit-text-stroke: 1px[描边的粗细] red[秒变得颜色]; 文字描边,
+
+direction: rtl:文字排列;取值: rtl | ltr; 需要和Unicode-bidi: bidi-override配合才可以生效;
+
+box-shadow: 1px[X] 2px[Y] 1px[blur] 5px[扩展,可选参数] green[color];
+
+ background: -webkit-linear-gradient(top,red 0%,red 25%,green 25%, green 50%,yellow 50%,yellow 75%, blue 75%);
+
+ 先行渐变：
+    background: -webkit-linear-gradient(开始位置,color1 0%,color1 25%,····)多个参数用逗号隔开;
+
+ 径向渐变：
+    background: -webkit-radial-gradient(形状[circle,ellipse],red,green,yellow,black,pink)
+    background: -webkit-radial-gradient(X Y,red,green,yellow,black,pink);
+
+ 重复渐变：
+    background: -webkit-repeating-linear-gradient(left,red 0%,red 5%,blue 5%, blue 10%,yellow 10%, yellow 15%);
+
+ 蒙版：
+    -webkit-mask:url(路径):
+
+ 倒影：
+    -webkit-box-reflect: left|right|above|below 30px[距离] linear-gradient(transparent,white)[渐变];
+
+transparent:透明;
+
+-webkit-:
+
+盒子模型:
+    border+padding+width;
+
+新增的盒子模型:
+    box-sizing:
+        content-box:width+border+padding;会改变盒子模型的大小,宽高向外变化;
+        border-box: 不会改变盒子模型的大小,宽高向内填充;
+
+calc(25% - 4px):可以做加减乘除运算,
+
+弹性盒模型:
+       属性嫁给父级:
+        display: -webkit-box;子级不能在使用float;
+
+       子级：
+            -webkit-box-flex: number;
+
+
+
+
+
+
+
+

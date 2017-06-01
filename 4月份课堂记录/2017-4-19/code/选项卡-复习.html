@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 30px auto;
+    }
+    #box p{
+        width: 300px;
+        height: 39px;
+        margin: 0;
+        border-bottom: 1px solid red;
+    }
+    #box>p a{
+        width: 100px;
+        height: 39px;
+        background: cadetblue;
+        display: block;
+        float: left;
+        text-align: center;
+        line-height: 39px;
+        text-decoration: none;
+        color: black;
+    }
+    #box div{
+        width: 300px;
+        height: 260px;
+        text-align: center;
+        line-height: 260px;
+        display: none;
+    }
+    #box>p a.on{
+        background: #5bc0de;
+        color: white;
+    }
+</style>
+<script>
+    window.onload=function () {
+        var box=document.getElementById("box");
+        var btn=box.getElementsByTagName("a");
+        var nav=box.getElementsByTagName("div");
+        var a = 'display';
+        for(var i=0;i<3;i++){
+            btn[i].onmouseover=function () {
+                for(var i=0;i<3;i++){
+                    btn[i].className='';
+                    nav[i].style.display='none';
+                    btn[i].index=i;
+                }
+                nav[this.index].style[a]='block';
+                this.className = 'on';
+            }
+        }
+    }
+</script>
+<body>
+<div id="box">
+    <p>
+        <a href="javascript:;" class="on">规则</a>
+        <a href="javascript:;">公告</a>
+        <a href="javascript:;">论坛</a>
+    </p>
+    <div style="display: block">规则</div>
+    <div>公告</div>
+    <div>论坛</div>
+</div>
+</body>
+</html>

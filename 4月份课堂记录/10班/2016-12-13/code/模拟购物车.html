@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+衣服: <input type="number" id="txt" min="0" max="10" step="2">
+<script>
+    var oTxt = document.getElementById('txt');
+
+    oTxt.onchange = function(){
+        localStorage.yf = oTxt.value;
+    }
+</script>
+</body>
+</html>

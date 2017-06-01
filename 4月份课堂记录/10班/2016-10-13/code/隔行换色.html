@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.a {
+	background: green;
+}
+.b {
+	background: blue;	
+}
+</style>
+<script>
+window.onload = function(){
+	var aLi = document.getElementsByTagName('li');
+	
+	for(var i = 0; i < aLi.length; i++){
+		if(i%2 == 0){
+			aLi[i].className = 'a';	
+		}else{
+			aLi[i].className = 'b';
+		}	
+	}
+}
+</script>
+</head>
+
+<body>
+<ul>
+<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+</ul>
+</body>
+</html>

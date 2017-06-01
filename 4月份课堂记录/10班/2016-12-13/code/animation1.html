@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @-webkit-keyframes move {
+            0%{
+                left: 0;
+                top: 0;
+            }
+            25%{
+                left: 400px;
+                top: 0;
+            }
+
+            50%{
+                left: 400px;
+                top: 400px;
+            }
+
+            75%{
+                left: 0;
+                top: 400px;
+            }
+            100%{
+                left: 0;
+                top: 0;
+            }
+        }
+        #div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: move 5s cubic-bezier(0.44,-0.03, 0.13, 0.22);
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

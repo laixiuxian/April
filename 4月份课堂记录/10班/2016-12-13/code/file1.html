@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   
+</head>
+<body>
+<input type="file" name="" id="txt" multiple>
+<script>
+    var oTxt = document.getElementById('txt');
+
+    oTxt.onchange = function(ev){
+        var aFile = ev.srcElement.files;
+
+        alert(aFile.length);
+    }
+</script>
+</body>
+</html>

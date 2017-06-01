@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById('box');
+
+            oBox.onclick = function(ev){
+                var oEvent = ev || event;
+                alert(oEvent);
+            };
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+
+</div>
+</body>
+</html>

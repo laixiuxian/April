@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+            border: #000 1px solid;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box span {
+            display: block;
+            width: 300px;
+            height: 150px;
+            background: white;
+            opacity: .1;
+            position: absolute;
+            left: 0;
+        }
+
+        #up {
+            top: 0;
+        }
+
+        #down {
+            bottom: 0;
+        }
+
+        #box img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oUp = document.getElementById('up');
+            var oDown = document.getElementById('down');
+            var oImg = document.getElementById('img');
+            var count = 0;
+            var timer;
+            oUp.onmouseover = function () {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    count -= 10;
+                    if (count <= -468) count = -468;
+                    oImg.style.top = count + 'px';
+                }, 30);
+
+            };
+
+            oUp.onmouseout = function () {
+                clearInterval(timer);
+            };
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <img src="tu.jpg" alt="" id="img">
+    <span id="up"></span>
+    <span id="down"></span>
+</div>
+</body>
+</html>

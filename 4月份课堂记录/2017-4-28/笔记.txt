@@ -1,0 +1,72 @@
+复习:
+
+    1.
+        键盘事件:
+            oEvent.keyCode
+            ctrl: ctrlKey
+            alt:  altKey
+            shift: shiftKey
+
+    2.
+        怎么给未来的元素加事件:
+            事件委托:
+                var oTarget = oEvent.srcElement || oEvent.target;
+                if(oTarget.tagName == 'LI'){
+                    //code
+                }
+
+    3.
+        设置自定义属性:
+            obj.setAttribute(name,value);
+
+        获取自定义属性:
+            obj.getAttribute(name);
+
+    4.
+        两个匿名函数不相等;
+
+    5.
+        obj.onkeydown:键盘按下;
+
+        obj.onkeyup:键盘抬起;
+----------------------------------------------------------------
+打车 a--b点 1000ms 走完,30ms 走一次;
+    起点[start]:a
+    终点[end]:b
+    总距离[iTarget]: b-a;
+    总时间[time]: 1000ms
+    多长时间走一次: 30ms;
+    总共走了多少次[count]: 1000/30;
+    步长[step]:iTarget/count;
+----------------------------------------------------------------
+    offsetWidth/offsetHeight/offsetLeft/offsetTop;不能使用;
+---------------------------------------------------------------
+move(obj,iTarget);//obj:物体;iTarget:目标点;
+
+贝塞尔曲线运动
+
+链式运动:
+    move(obj,time,name,iTarget,fn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

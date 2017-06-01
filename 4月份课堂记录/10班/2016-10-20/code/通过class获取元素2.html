@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+
+</style>
+<script>
+window.onload = function(){
+	//获取页面上所有的元素;
+	var aEle = document.getElementsByTagName('*');
+	//alert(aEle.length);//13
+	var arr = [];
+	for(var i = 0; i < aEle.length; i++){
+		//alert(aEle[i].className);
+		var tmp = aEle[i].className.split(' ');
+		//alert(tmp);
+		
+	}
+}
+</script>
+</head>
+<body>
+<div class="red">div</div>
+<p class="blue">p标签</p>
+<span class="red blue" style="display: block;">span</span>
+<h1 class="blue red">h1</h1>
+<h3 class="red1">h3</h3>
+<h5 class="red2 blue red">h5</h5>
+</body>
+</html>

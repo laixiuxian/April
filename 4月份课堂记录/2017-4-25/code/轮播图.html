@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 365px;
+            height: 227px;
+            border: #000 1px solid;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #box a {
+            display: block;
+            width: 30px;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            opacity: .6;
+            position: absolute;
+            top: 94px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+        }
+
+        #left {
+            left: 0;
+        }
+
+        #right {
+            right: 0;
+        }
+
+        #box p {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -54px;
+        }
+
+        #box p span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+            float: left;
+            margin-right: 6px;
+            border-radius: 50%;
+        }
+
+        #box p span.on {
+            background: red;
+        }
+
+        #box img {
+            width: 365px;
+            height: 227px;
+            display: none;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <a href="javascript:;" id="left"> < </a>
+    <a href="javascript:;" id="right"> > </a>
+    <p>
+        <span class="on">1</span>
+        <span>2</span>
+        <span>3</span>
+    </p>
+    <img src="img/1.jpg" alt="" style="display: block;">
+    <img src="img/2.jpg" alt="">
+    <img src="img/3.png" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            //obj:元素, attr:属性;
+            function getStyle(obj,attr){
+                if(obj.currentStyle){
+                    return obj.currentStyle[attr];
+                }else{
+                    return getComputedStyle(obj,false)[attr];
+                }
+            }
+            oBox.onclick = function(){
+                alert(getStyle(this,'width'));
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

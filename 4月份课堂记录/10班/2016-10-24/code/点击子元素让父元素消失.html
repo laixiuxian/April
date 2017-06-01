@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var aBtn = oBox.getElementsByTagName('a');
+	 
+	 for(var i = 0; i< aBtn.length; i++){
+		aBtn[i].onclick = function(){
+			this.parentNode.style.display = 'none';
+		}		 
+	}
+}
+</script>
+</head>
+
+<body>
+<ul id="box">
+	<li>1111<a href="javascript:;">隐藏</a></li>
+    <li>2222<a href="javascript:;">隐藏</a></li>
+    <li>3333<a href="javascript:;">隐藏</a></li>
+    <li>4444<a href="javascript:;">隐藏</a></li>
+    
+</ul>
+</body>
+</html>

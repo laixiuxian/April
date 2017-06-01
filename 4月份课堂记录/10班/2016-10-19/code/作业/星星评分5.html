@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+#ul1{ width:200px; margin:100px auto;}
+#ul1 li.left{ width:14px; height:27px; background:url(star.gif) no-repeat 0 0; float:left;}
+#ul1 li.right{ width:14px; height:27px; background:url(star.gif) no-repeat -14px 0; float:left;}
+
+#ul1 li.left_on{ width:14px; height:27px; background:url(star.gif) no-repeat 0 -29px; float:left;}
+#ul1 li.right_on{ width:14px; height:27px; background:url(star.gif) no-repeat -14px -29px; float:left;}
+</style>
+<script>
+window.onload = function(){
+	var aLi = document.getElementsByTagName('li');
+	
+	for(var i = 0; i < aLi.length; i++){
+		if(i%2 == 0){
+			aLi[i].className = 'left';	
+		}else{
+			aLi[i].className = 'right';	
+		}
+	}
+	
+	for(var i = 0; i < aLi.length; i++){
+		aLi[i].index = i;
+		aLi[i].onmouseover = function(){
+			for(var i = 0; i < aLi.length; i++){
+				if(i%2 == 0){//判断移入的是左边还是右边;
+					if(i <= this.index){//拿index和当前的i做对比;
+						aLi[i].className = 'left_on';	
+					}else{
+						aLi[i].className = 'left';
+					}
+				}else{
+					if(i <= this.index){
+						aLi[i].className = 'right_on';	
+					}else{
+						aLi[i].className = 'right';
+					}
+				}	
+			}	
+		}	
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

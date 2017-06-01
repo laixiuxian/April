@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //闭包:子函数可以使用父函数的局部变量;
+        function show(){
+            var a = 12;
+            function show1(){
+                var b = 5;
+                alert(a + b);
+            }
+            show1();
+        }
+        show();
+    </script>
+</head>
+<body>
+</body>
+</html>

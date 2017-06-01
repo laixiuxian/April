@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="div"></div>
+<script>
+window.onload = function(){
+    var oDiv = document.getElementById('div');
+    var timer;
+    oDiv.onclick = function(){
+        var start = 0;//起点
+        var end = 300;//终点
+        var iTarget = end - start;//总距离
+        var count = parseInt(1000/30);//总次数
+        var step = iTarget/count;//步长
+        var n = 0;//当前走的次数;
+        timer = setInterval(function(){
+            n++;
+            if( n == count){
+                clearInterval(timer);
+            }
+            oDiv.style.left = step * n + 'px';
+        },30);
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+        }
+
+        #div3 {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox1 = document.getElementById('div1');
+            var oBox2 = document.getElementById('div2');
+            var oBox3 = document.getElementById('div3');
+            oBox1.onclick = function(){
+                alert(this.style.background);
+            };
+
+            oBox2.onclick = function(){
+                alert(this.style.background);
+            };
+
+            oBox3.onclick = function(){
+                alert(this.style.background);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1" style="background: green;">
+    <div id="div2" style="background: red;">
+        <div id="div3" style="background: yellow;"></div>
+    </div>
+</div>
+</body>
+</html>

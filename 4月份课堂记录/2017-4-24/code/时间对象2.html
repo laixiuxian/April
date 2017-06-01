@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 100%;
+            height: 300px;
+            background: #000;
+            color: #fff;
+            font-size: 40px;
+            line-height: 300px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDate = new Date();
+//        alert(oDate);//Mon Apr 24 2017 10:04:51
+            var oYear = oDate.getFullYear();
+            var oMonth = oDate.getMonth();//月份从0开始;
+            var oDay = oDate.getDate();
+            var oHours = oDate.getHours();
+            var oMin = oDate.getMinutes();
+            var oSec = oDate.getSeconds();
+            var oWeek = oDate.getDay();//周日是0;
+
+            document.body.innerHTML = oYear + oMonth + oDay + oHours + oMin + oSec + oWeek;
+        }
+    </script>
+</head>
+<body>
+XXXX年XX月XX 日  00:00:00 周一
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oBtn = document.getElementById('btn');
+	var oH2 = document.getElementById('h2');
+	oBtn.onclick = function(){
+		var oH3 = document.createElement('h3');
+		oH3.innerHTML = '我是一个H3标签';
+		oBox.insertBefore(oH3,oH2);	
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="添加" id="btn"/>
+<div id="box">
+	<h2 id="h2">我是一个H2标签</h2>
+</div>
+</body>
+</html>

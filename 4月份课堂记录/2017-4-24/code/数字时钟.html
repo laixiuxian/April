@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            width: 100%;
+            height: 300px;
+            background: #000;
+            color: #fff;
+            font-size: 40px;
+            line-height: 300px;
+            text-align: center;
+        }
+    </style>
+    <script>
+//        addZero(n);n代表需要补零的那个数;
+            function addZero(n){
+                if(n < 10){
+                   return '0' + n;
+                }else{
+                    return '' + n;
+                }
+            }
+        window.onload = function(){
+            setInterval(function(){
+                var oDate = new Date();
+                var oYear = oDate.getFullYear();
+                var oMonth = oDate.getMonth();
+                var oDay = oDate.getDate();
+                var oHours = oDate.getHours();
+                var oMin = oDate.getMinutes();
+                var oSec = oDate.getSeconds();
+                var oWeek = oDate.getDay();
+                if(oWeek == 0) oWeek = '日';
+                if(oWeek == 1) oWeek = '一';
+                if(oWeek == 2) oWeek = '二';
+                if(oWeek == 3) oWeek = '三';
+                if(oWeek == 4) oWeek = '四';
+                if(oWeek == 5) oWeek = '五';
+                if(oWeek == 6) oWeek = '六';
+
+                document.body.innerHTML = oYear +'年'+ addZero(oMonth+1)+'月' + addZero(oDay)+'日  ' + addZero(oHours)+':' + addZero(oMin)+':' + addZero(oSec) +'  ' + '星期'+oWeek;
+            },1000);
+        }
+    </script>
+</head>
+<body>
+XXXX年XX月XX 日  00:00:00 周一
+</body>
+</html>

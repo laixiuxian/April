@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var arr = [1,2,43,2,1,3,4,5,0,1,-100,324,5];
+var iMin = arr[0];
+var iMinIndex;
+for(var i = 0; i < arr.length; i++){
+	if(arr[i] < iMin){
+		iMin = arr[i];
+		iMinIndex = i;	
+	}
+}
+alert('最小数是' + iMin + ':出现的位置是' + iMinIndex);
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 200px;
+	height: 200px;
+	background: red;
+	color: white;
+	font-size:50px;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	
+	oBox.onclick = function(){
+		this.style.background = 'green';
+		this.innerHTML = '不是一个div';	
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box">我是一个div</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	
+	document.onmousemove = function(ev){
+		var oEvent = ev || event;	
+		var l = oEvent.clientX;
+		var t = oEvent.clientY;
+		oBox.style.left = l + 'px';
+		oBox.style.top = t + 'px';
+		
+		//document.title = l + ' : ' + t;
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

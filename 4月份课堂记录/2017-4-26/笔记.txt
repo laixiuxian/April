@@ -1,0 +1,117 @@
+复习:
+    1.
+        json和数组的区别:
+            数组有length;和位置有关系;while,for循环
+            json没有length,和位置无关,for in循环;
+            for in 循环不但可以循环json,也可以循环数组;性能略低;
+        json用来存储多个东西;
+        访问json中的某一项:
+            json.name
+        添加一个:
+            json.name = 12;
+        删除一个:
+            delete json.name;
+
+        json的基本格式:键值对形式出现;
+            var json = {
+                键1:值1,
+                键2:值2
+                ·····
+            };
+
+    2.
+        物体的信息：
+            obj.offsetLeft: 到左边的距离;
+            obj.offsetTop:到上边的距离;
+            obj.offsetWidth:宽度;
+            obj.offsetHeight:高度;
+            obj.scrollHeight:内容实际高度;
+
+        可视区宽度和高度:
+            document.documentElement.clientHeight:可视区高度
+
+            document.documentElement.clientWidth:可视区宽度;
+
+    3.
+        事件对象:存储或者描述了事件更加详细的信息;
+        event:不兼容FF;FF下报错;
+        ev:不兼容IE8--;IE8--报undefined;
+        var oEvent = ev || event;
+
+        oEvent.clientX: X轴坐标;
+        oEvent.clientY: Y轴坐标;
+
+    4.
+        ||判断:
+            从左往右,遇到真的就不往后看,如果都是假的,取最后一个值;
+
+    5.
+        onmousedown:鼠标按下;
+        onmousemove:鼠标移动;出发频率非常高;
+        onmouseup:鼠标抬起;
+
+    6.
+        组织浏览器默认事件：
+            return false;
+
+    7.事件捕获:
+        obj.setCapture && obj.setCapture()
+
+      事件释放捕获:
+        obj.releaseCapture && obj.releaseCapture();
+-----------------------------------------------------
+onmouseover--->onmouseenter;
+
+onmouseout--->onmouseleave;
+
+创建一个元素:
+    document.createElement('要创建的标签名');
+
+往后面添加元素:
+    obj.appendChild(name);
+
+往前面添加元素:
+    父级.insertBefore(要添加的元素,在谁的前面);
+
+删除元素:
+    父级.removeChild(要删除的那个元素);
+
+事件冒泡:
+    子元素的事件可以传递给父元素;如果父元素有相同的事件,那么会触发,否则会一直冒泡;
+
+取消事件冒泡:
+    oEvent.cancelBubble = true;
+
+全新的添加事件的方法:
+    事件绑定:
+        同一个元素,同一个事件,希望执行不同的函数;
+        obj.addEventListener(事件名,函数,false);***事件名不需要加on;不兼容IE8--;报undefined;
+
+        false:指的是事件是否下沉;false代表不下沉;事件下沉不是正常的行为;冒泡才是正常的事件行为.
+
+        obj.attachEvent(事件名,函数);***事件名必须加on;只兼容IE系列;chrome和FF报错;
+
+事件解除绑定:
+    obj.removeEventListener(事件名,函数,false);兼容chrome,FF,IE9+;ie8--报undefined;
+
+    obj.detachEvent(事件名,函数);只兼容IE8-;
+
+addEvent(obj,sEv,fn);
+
+removeEvent(obj,sEv,fn);
+
+
+
+
+
+
+
+
+
+
+
+事件绑定
+
+事件委托
+
+键盘事件

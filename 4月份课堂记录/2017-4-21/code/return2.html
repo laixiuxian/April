@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        function show(){
+            alert('1');
+            return;
+        }
+        alert(show());//1,undefined;
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

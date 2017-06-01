@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background: gray;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+           var aDiv = document.getElementsByTagName('div');
+           for(var i = 0; i < aDiv.length; i++){
+               // alert(i);//0---14之间的数字;
+                aDiv[i].onclick = function(){
+                    for(var i = 0; i < aDiv.length; i++){
+                        aDiv[i].style.background = 'gray';
+                    }
+                    this.style.background = 'red';
+                }
+           }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

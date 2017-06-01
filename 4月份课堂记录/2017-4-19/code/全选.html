@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload = function () {
+        var aInput = document.getElementsByTagName('input');
+
+        aInput[0].onclick = function(){
+            for(var i = 1; i < aInput.length; i++){
+                aInput[i].checked = true;
+            }
+        }
+    }
+</script>
+<body>
+<input type="button" value="全选" id="btn">
+<hr>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</body>
+</html>

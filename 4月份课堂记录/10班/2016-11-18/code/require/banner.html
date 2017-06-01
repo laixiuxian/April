@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #wrap {
+            width: 470px;
+            height: 150px;
+            margin: 100px auto;
+            border: #333 2px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #wrap ul {
+            position: absolute;
+        }
+
+        #wrap ul li {
+            width: 470px;
+            height: 150px;
+        }
+
+        #wrap ol {
+            width: 120px;
+            height: 20px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        #wrap ol li {
+            width: 20px;
+            height: 20px;
+            float: left;
+            border-radius: 50%;
+            margin-left: 10px;
+            background: #333;
+        }
+
+        #wrap .active{
+            background: #c00;
+        }
+    </style>
+    <script src="require.js" data-main="init"></script>
+</head>
+<body>
+<div id="wrap">
+    <ul id="box">
+        <li><img src="images/1.jpg" alt=""/></li>
+        <li><img src="images/2.jpg" alt=""/></li>
+        <li><img src="images/3.jpg" alt=""/></li>
+        <li><img src="images/4.jpg" alt=""/></li>
+    </ul>
+    <ol id="btn">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+</body>
+</html>

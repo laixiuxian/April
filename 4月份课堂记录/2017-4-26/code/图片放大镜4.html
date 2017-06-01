@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #small {
+            width: 175px;
+            height: 175px;
+            border: #000 1px solid;
+            float: left;
+            position: relative;
+        }
+
+        #small img {
+            width: 175px;
+            height: 175px;
+        }
+
+        #small p {
+            width: 70px;
+            height: 70px;
+            background: yellow;
+            opacity: .5;
+            border: red 1px solid;
+            left: 0;
+            top: 0;
+            position: absolute;
+            display: none;
+        }
+
+        #big {
+            width: 400px;
+            height: 400px;
+            border: #000 1px solid;
+            float: left;
+            margin-left: 20px;
+            overflow: hidden;
+            position: relative;
+            display: none;
+        }
+
+        #big img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oSmall = document.getElementById('small');
+            var oSimg = document.getElementById('simg');
+            var oMask = document.getElementById('mask');
+            var oBig = document.getElementById('big');
+            var oBimg = document.getElementById('bimg');
+
+            oSimg.onmouseenter = function () {
+                oMask.style.display = 'block';
+                oBig.style.display = 'block';
+            };
+
+            oSmall.onmouseleave = function () {
+                oMask.style.display = 'none';
+                oBig.style.display = 'none';
+            };
+
+            oSmall.onmousemove = function (ev) {
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - oMask.offsetWidth / 2;
+                var disY = oEvent.clientY - oMask.offsetHeight / 2;
+
+                if (disX < 0) {
+                    disX = 0;
+                } else if (disX > oSmall.offsetWidth - oMask.offsetWidth) {
+                    disX = oSmall.offsetWidth - oMask.offsetWidth;
+                }
+
+                if (disY < 0) {
+                    disY = 0;
+                } else if (disY > oSmall.offsetHeight - oMask.offsetHeight) {
+                    disY = oSmall.offsetHeight - oMask.offsetHeight;
+                }
+                var l = disX * (oBig.offsetWidth - oBimg.offsetWidth) / (oSmall.offsetWidth - oMask.offsetWidth);
+
+                var t = disY * (oBig.offsetHeight - oBimg.offsetHeight) / (oSmall.offsetHeight - oMask.offsetHeight)
+                oMask.style.left = disX + 'px';
+                oMask.style.top = disY + 'px';
+                oBimg.style.left = l + 'px';
+                oBimg.style.top = t + 'px';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="small">
+    <img src="img/s.jpg" alt="" id="simg">
+    <p id="mask"></p>
+</div>
+<div id="big">
+    <img src="img/b.jpg" alt="" id="bimg">
+</div>
+</body>
+</html>

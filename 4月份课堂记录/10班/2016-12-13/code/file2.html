@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   
+</head>
+<body>
+<input type="file" name="" id="txt" multiple>
+<script>
+    var oTxt = document.getElementById('txt');
+
+    oTxt.onchange = function (ev) {
+        var oFile = ev.srcElement.files[0];
+
+//        alert(oFile.name);//文件名字;
+//        alert(oFile.type);//文件类型;
+        alert(oFile.size);//文件大小;
+    };
+</script>
+</body>
+</html>

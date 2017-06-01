@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+</style>
+<script>
+var arr = [
+	{
+		title:'1习近平会见普京：相互支持 相互给力借力',
+		href:'http://news.xinhuanet.com/world/2014-09/11/c_1112448569.htm',
+		child:[
+			{title:'1称是“合作之旅”',href:'http://www.g.cn'},
+			{title:'媒体评：海洋色彩全方位外交',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'}
+		]	
+	},
+	{
+		title:'2习近平会见普京：相互支持 相互给力借力',
+		href:'http://news.xinhuanet.com/world/2014-09/11/c_1112448569.htm',
+		child:[
+			{title:'2称是“合作之旅”',href:'http://www.g.cn'},
+			{title:'媒体评：海洋色彩全方位外交',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'}
+		]	
+	},
+	{
+		title:'3习近平会见普京：相互支持 相互给力借力',
+		href:'http://news.xinhuanet.com/world/2014-09/11/c_1112448569.htm',
+		child:[
+			{title:'3称是“合作之旅”',href:'http://www.g.cn'},
+			{title:'媒体评：海洋色彩全方位外交',href:'http://www.g.cn'},
+			{title:'俄蒙三国元首会晤',href:'http://www.g.cn'}
+		]	
+	}
+];
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	
+	//alert(arr.length);//3
+	for(var i = 0; i < arr.length; i++){
+		var oLi = document.createElement('li');
+		var oH3 = document.createElement('h3');
+		oH3.innerHTML = '<a href="'+arr[i].href+'">'+arr[i].title+'</a>';
+		oLi.appendChild(oH3);
+		oBox.appendChild(oLi);	
+	}
+}
+</script>
+</head>
+
+<body>
+<ul id="box"></ul>
+</body>
+</html>

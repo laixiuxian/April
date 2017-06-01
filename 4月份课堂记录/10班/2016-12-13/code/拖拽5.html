@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            border: #000 2px dashed;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    请将文件拖到此处
+</div>
+<script>
+    var oDiv = document.getElementById('div');
+    var timer = null;
+
+    document.ondragover = function () {
+        clearTimeout(timer);
+        oDiv.style.display = 'block';
+
+        timer = setTimeout(function () {
+            oDiv.style.display = 'none';
+        }, 100);
+    };
+
+    oDiv.ondragenter = function () {
+        oDiv.innerHTML = '请释放鼠标';
+    };
+
+    oDiv.ondragleave = function () {
+        oDiv.innerHTML = '请将文件拖到此处';
+    };
+
+    oDiv.ondragover = function () {
+        return false;
+    };
+
+    oDiv.ondrop = function (ev) {
+        var aFile = ev.dataTransfer.files;
+
+        alert(aFile.length);
+
+        return false;//阻止浏览器读取文件内容;
+    }
+</script>
+
+</body>
+</html>

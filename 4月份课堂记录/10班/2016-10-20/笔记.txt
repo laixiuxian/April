@@ -1,0 +1,69 @@
+回顾:
+	字符串方法:
+		str.length
+		str.charAt(i):取字符串中的某一个;
+		str.indexOf('e');找第一个出现的位置;找不到返回-1;
+		str.lastIndexOf('e'):找最后一个e出现的位置;找不到返回-1;
+		str.toUpperCase();转大写
+		str.toLowerCase();转小写
+		str.substring(起始位置,结束位置):字符串截取;
+		str.split('切割的方式');字符串切割;字符串转数组;
+				
+	数组方法:
+		
+		删除：arr.splice(开始位置,删除的个数);
+		添加：arr.splice(开始的位置[往哪一位的前面添加],0,元素1····);
+		替换：arr.splice(开始位置,删除的个数,元素1···);
+		arr.sort(function(n1,n2){return n1 - n2}):排序
+		arr.reverse():翻转
+		arr.push();往数组后面添加一位;
+		arr.unshift():往数组前面添加一位;
+		arr.pop():从数组的后面删除一位;
+		arr.shift():从数组的前面删除一位;
+		arr.join('连接的方式');数组转字符串的方法;
+		arr.concat(arr1,arr2····);数组连接;
+
+UA:浏览器详细信息;window.navigator.userAgent
+----------------------------------------------------------------
+数组:存多个东西;
+json:存多个东西;
+json = {
+	//键值对
+	name1[键,key]:value1[值,value],
+	name2[键,key]:value2[值,value],
+}
+
+			json			arr
+length		undefined		arr.length;
+下标			属性的方式		arr[0];
+顺序			没有顺序			有顺序;
+循环			for in			for,while,for in
+
+for in循环也可以循环数组,但是不建议使用,因为性能略低;
+
+js小特性:
+	逗号表达式：只看最后一个逗号后面的那个值;
+	
+	var a = b = c = d = 1;×
+	var a =1;
+	b = 1;
+	c = 1;
+	d = 1;
+	声明变量不加var,默认变成全局变量;少用全局;
+	
+	预解析：预先解析一些东西,变量的声明会预解析,函数的定义也会预解析,作用范围:最大到script标签内;最小到函数内部;
+	
+	引用：指的是同一个东西;对象之间会引用,非对象之间不会引用(不绝对);
+	
+	try{
+		//可能有错误的代码;
+	}catch(e){
+		alert(e.message);
+		补救的代码;
+	}
+
+//var json={a:1,b:2,c:3};---->a=1&b=2&c=3;
+//var str='a=1&b=2&c=3&d=5';---->{a:1,b:2,c:3,d:5}
+
+
+

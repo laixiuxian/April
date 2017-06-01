@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	function rnd(x,y){
+		return parseInt(Math.random()*(y-x)+(x));
+	}
+	function addZero(n){
+		if(n<10){
+			return '0'+n;
+		}else{
+			return ''+n;
+		}
+	}
+	function findInarr(n,arr){
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]==n){
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	var arr=[];
+	for(i=0;i<6;i++){
+		var n=addZero(rnd(1,34));
+		if(findInarr(n,arr)==false){
+			arr.push(n);
+		}else{
+			i--;
+		}
+	}
+	document.write(arr)
+</script>
+</head>
+
+<body>
+</body>
+</html>

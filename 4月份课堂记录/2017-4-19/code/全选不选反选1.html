@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload = function () {
+        var aInput = document.getElementsByTagName('input');
+
+        aInput[0].onclick = function(){
+            for(var i = 3; i < aInput.length; i++){
+                aInput[i].checked = true;
+            }
+        };
+
+        aInput[1].onclick = function(){
+            for(var i = 3; i < aInput.length; i++){
+                aInput[i].checked = false;
+            }
+        };
+
+        aInput[2].onclick = function(){
+            for(var i = 3; i < aInput.length; i++){
+                aInput[i].checked = !aInput[i].checked;
+            }
+        }
+    }
+</script>
+<body>
+<input type="button" value="全选" id="btn1">
+<input type="button" value="不选" id="btn2">
+<input type="button" value="反选" id="btn3">
+<hr>
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</body>
+</html>

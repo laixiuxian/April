@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+总价: $<strong id="strong">xx</strong>元
+<script>
+    var oStrong = document.getElementById('strong');
+    window.onstorage = function(){
+        var n = localStorage.yf;
+        oStrong.innerHTML = n * 10;
+    }
+</script>
+</body>
+</html>

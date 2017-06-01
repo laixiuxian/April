@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #box {
+            width: 100%;
+            height: 300px;
+            background: red;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById('box');
+            var timer1 =null;
+            var timer2 =null;
+
+            function show(){
+                oBox.style.display = 'block';
+            }
+
+            function hide(){
+                oBox.style.display = 'none';
+            }
+
+            timer1 = setTimeout(show,500);
+
+            timer2 = setTimeout(hide,4000);
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

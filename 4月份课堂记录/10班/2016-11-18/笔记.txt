@@ -1,0 +1,56 @@
+seajs:
+    模块化:就是普通的函数;一个函数就是一个模块;
+
+好处:
+    1.解决文件依赖;
+    2.解决变量名冲突;
+
+sea.js:国人开发的 CMD: Common Module Define;
+require.js:老外开发的;AMD: Asynchronous Module Define;
+
+定义模块：
+    define(function(require,exports,module){
+        输出一个模块：
+        exports.a = 12;
+    });
+
+引入一个模块:
+    require('JS文件名字');
+
+
+seajs.use('a',function(mod){});//使用一个模块;
+seajs.use(['a','b'],function(mod1,mod2){});//使用多个模块;
+
+写模块化的口诀：拆,按照函数的功能来拆;
+
+require.js:
+    定义模块:
+        define(function(require,exports,module){
+            var a = require('move');//引入其他模块;
+
+            exports.slider = function(){};//输出一个模块；
+        });
+
+使用模块：
+    require(['a'],function(mod){
+        mod.slider();
+    });
+
+data-main='init';
+
+http://seajs.org/
+
+http://www.requirejs.cn/docs/download.html
+
+http://www.gruntjs.net/
+
+http://www.gulpjs.com.cn/
+
+http://www.browsersync.cn/
+
+
+
+
+
+
+

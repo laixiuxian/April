@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+
+</style>
+<script>
+function findInArr(n,arr){
+	for(var i = 0; i < arr.length; i++){
+		if(arr[i] == n)return true;	
+	}
+	return false;
+}
+window.onload = function(){
+	//获取页面上所有的元素;
+	var aEle = document.getElementsByTagName('*');
+	//alert(aEle.length);//13
+	var arr = [];//放符合需求的标签;
+	for(var i = 0; i < aEle.length; i++){
+		//alert(aEle[i].className);
+		var tmp = aEle[i].className.split(' ');
+		//alert(tmp);
+		//如果tmp中包含有'red',
+		if(findInArr('red',tmp) == true){
+			//把className中包含有'red'的标签放到arr中;
+			arr.push(aEle[i]);	
+		}
+	}
+	alert(arr);//数组中放的是符合需求的标签;
+	for(var i = 0;  i < arr.length; i++){
+		arr[i].style.background = 'red';	
+	}
+}
+</script>
+</head>
+<body>
+<div class="red">div</div>
+<p class="blue">p标签</p>
+<span class="red blue" style="display: block;">span</span>
+<h1 class="blue red">h1</h1>
+<h3 class="red1">h3</h3>
+<h5 class="red2 blue red">h5</h5>
+</body>
+</html>

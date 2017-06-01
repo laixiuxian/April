@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #div {
+            width: 100px;
+            height: 150px;
+            margin-top: 50px;
+            margin-left: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById('div');
+
+//            alert(oBox.offsetLeft);
+//            alert(oBox.offsetTop);
+//            alert(oBox.offsetWidth + ' : ' +oBox.offsetHeight);
+            alert(oBox.scrollHeight);
+        }
+    </script>
+</head>
+<body>
+<div id="div">　其一，善于统筹点面“督”出改革实效。 督察工“督”出改革实效督察工“督”出改革实效督察工筹点面“督”出改革实效。 督察工“督”出改革实效督察工“督”出改革实效督察工</div>
+</body>
+</html>

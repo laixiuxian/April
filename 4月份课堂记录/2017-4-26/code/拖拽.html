@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+</head>
+<body>
+<div id="box"></div>
+<script>
+    window.onload = function () {
+        var oBox = document.getElementById('box');
+        oBox.onmousedown = function (ev) {
+            var oEvent = ev || event;
+            var disX = oEvent.clientX - oBox.offsetLeft;
+            var disY = oEvent.clientY - oBox.offsetTop;
+            document.onmousemove = function (ev) {
+                var oEvent = ev || event;
+                var oX = oEvent.clientX - disX;
+                var oY = oEvent.clientY - disY;
+                if (oX < 0) {
+                    oX = 0
+                } else if (oX > document.documentElement.clientWidth - oBox.offsetWidth) {
+                    oX = document.documentElement.clientWidth - oBox.offsetWidth;
+                }
+
+                if (oY < 0) {
+                    oY = 0;
+                } else if (oY > document.documentElement.clientHeight - oBox.offsetHeight) {
+                    oY = document.documentElement.clientHeight - oBox.offsetHeight;
+                }
+                oBox.style.left = oX + 'px';
+                oBox.style.top = oY + 'px';
+
+            }
+            document.onmouseup = function (ev) {
+                document.onmousemove = null;
+                document.onmouseup = null;
+                oBox.releaseCapture && oBox.releaseCapture();
+            }
+            oBox.setCapture && oBox.setCapture();
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>

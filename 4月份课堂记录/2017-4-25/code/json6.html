@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var json = {
+            a:1,
+            b:2,
+            c:3,
+            d:4
+        };
+        delete json.a;
+        for(var name in json){
+            console.log(json[name]);
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

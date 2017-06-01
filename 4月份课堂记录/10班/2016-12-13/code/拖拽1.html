@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            border: #000 2px dashed;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    请将文件拖到此处
+</div>
+<script>
+    var oDiv = document.getElementById('div');
+    document.ondragenter = function(){
+        oDiv.style.display = 'block';
+    };
+
+    document.ondragleave = function(ev){
+        var oEven = ev || event;
+        oDiv.style.display = 'none';
+        oEven.preventDefault && oEven.preventDefault();
+    }
+</script>
+
+</body>
+</html>

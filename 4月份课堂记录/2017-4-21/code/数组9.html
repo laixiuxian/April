@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = [23,32,54,21,4,16,47,29];
+
+        arr.sort(function(n1,n2){
+            //n1-n2:如果两个数相减是负数;两个数的位置不变;
+            //n1-n2:如果两个数相减得到的是正数,交换两个数的位置;
+            return n1 - n2;
+        });
+
+        alert(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

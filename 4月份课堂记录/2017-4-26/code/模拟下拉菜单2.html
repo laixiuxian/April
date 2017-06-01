@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 200px;
+            height: auto;
+            overflow: hidden;
+            margin: 50px auto;
+        }
+
+        #box h3 {
+            width: 198px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: #000 1px solid;
+        }
+
+        #box ul {
+            display: none;
+        }
+
+        #box ul li {
+            width: 198px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border: #333 1px solid;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oUl = document.getElementById('ul');
+            var aLi = oUl.getElementsByTagName('li');
+            var bOK = true;//自定义开关;
+            oBtn.onclick = function (ev) {
+                var oEvent = ev || event;
+                if (bOK) {
+                    oUl.style.display = 'block';
+                } else {
+                    oUl.style.display = 'none';
+                }
+                bOK = !bOK;
+                oEvent.cancelBubble = true;
+            };
+
+            document.onclick = function(){
+                oUl.style.display = 'none';
+                bOK = true;
+            };
+
+            for(var i= 0; i< aLi.length; i++){
+                aLi[i].onclick = function(){
+                    oBtn.innerHTML = this.innerHTML;
+                    oUl.style.display = 'none';
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <h3 id="btn">请选择</h3>
+    <ul id="ul">
+        <li>天津</li>
+        <li>上海</li>
+        <li>杭州</li>
+        <li>北京</li>
+        <li>河南</li>
+    </ul>
+</div>
+</body>
+</html>

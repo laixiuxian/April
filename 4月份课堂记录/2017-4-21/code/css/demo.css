@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: url("../images/bg.png") no-repeat center 28px #273b12;
+}
+
+/*top style begin*/
+.header {
+    width: 100%;
+    height: 27px;
+    background: #f4f4f4;
+    border-bottom: #dadada 1px solid;
+}
+
+.top {
+    width: 960px;
+    height: 27px;
+    margin: 0 auto;
+}
+
+.top img {
+    width: 115px;
+    height: 17px;
+    display: block;
+    float: left;
+    margin: 6px 10px 4px 6px;
+}
+
+.top ul {
+    float: left;
+    width: 380px;
+    height: 12px;
+    line-height: 12px;
+    margin: 8px 0 7px 0;
+}
+
+.top ul li {
+    float: left;
+    height: 12px;
+    color: #ccc;
+}
+
+.top ul li a {
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    display: block;
+    float: left;
+    color: #666;
+    padding: 0 8px;
+}
+
+.top ol {
+    float: right;
+    line-height: 12px;
+    margin-top: 8px;
+}
+
+.top ol li {
+    float: left;
+    height: 12px;
+    color: #ccc;
+}
+
+.top ol li a {
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    display: block;
+    float: left;
+    color: #666;
+    padding: 0 8px;
+}
+/*top style end*/
+
+/*wrap style begin*/
+/*主体*/
+section{
+    width: 960px;
+    height: 1247px;
+    margin: 382px auto 0;
+    background-color: white;
+    overflow: hidden;
+}
+/*导语*/
+.sd1{
+    width: 921px;
+    height: 50px;
+    margin: 25px auto 25px;
+}
+.sd11{
+    width: 84px;
+    height: 50px;
+    background-image: url("img/11.jpg");
+    font-size: 20px;
+    color: #b67a44;
+    line-height: 45px;
+    text-align: center;
+    font-weight: 700;
+}
+.sd12{
+    width: 827px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 24px;
+}
+/*导语结束*/
+
+/*一*/
+.sd2{
+    width: 936px;
+    height: 39px;
+    margin: 0 auto;
+}
+/*一结束*/
+
+/*二*/
+.sd3{
+    width: 936px;
+    height: 280px;
+    margin: 18px auto 0;
+}
+.sd31{
+    width: 531px;
+    height: 280px;
+    background-image: url("img/sd2zbj.jpg");
+}
+.sd311{
+    width: 435px;
+    height: 260px;
+    margin-left: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.sd311 img{
+    display: none;
+}
+.sd312{
+    width: 86px;
+    height: 260px;
+    margin-top: 10px;
+}
+.sd312 img{
+    width: 100%;
+    height: 100%;
+}
+.sd3121{
+    width: 38px;
+    height: 38px;
+    margin: 27px auto 0;
+    border-radius: 50%;
+}
+.sd3122{
+    width: 66px;
+    height: 66px;
+    margin: 12px auto 0;
+    border-radius: 50%;
+}
+.sd3123{
+    width: 40px;
+    height: 40px;
+    margin: 12px auto 0;
+    border-radius: 50%;
+}
+.sd3124{
+    width: 40px;
+    height: 40px;
+    margin: 12px auto 0;
+    border-radius: 50%;
+}
+
+.sd32{
+    width: 395px;
+    height: 255px;
+    background-image: url("img/sd2ybj.jpg");
+    margin-top: 25px;
+}
+.sd321{
+    width: 360px;
+    height: 45px;
+    margin-left: 20px;
+}
+.sd321 p{
+    color: #a16e0b;
+    font-size: 24px;
+    line-height: 45px;
+    margin-left: 17px;
+    font-weight: 700;
+}
+.sd322{
+    width: 360px;
+    height: 190px;
+    margin-left: 20px;
+}
+.sd322 p{
+    margin-left: 20px;
+    line-height: 30px;
+}
+.sd322 p a{
+    color: #ff6600;
+}
+/*二结束*/
+
+/*三*/
+.sd4{
+    width: 936px;
+    height: 410px;
+    margin: 40px auto 0;
+}
+.sd41{
+    width: 571px;
+    height: 410px;
+}
+.sd411{
+    width: 571px;
+    height: 39px;
+    background-image: url("img/31.jpg");
+}
+.sd412{
+    width: 534px;
+    height: 350px;
+    margin: 20px auto 0;
+}
+.sd4121{
+    width: 240px;
+    height: 350px;
+}
+.sd41211,.sd41213{
+    width: 238px;
+    height: 168px;
+    border: 1px solid #f8e57c;
+
+}
+.sd41211{
+    background-image: url("img/311.jpg");
+    background-size: 100% 100%;
+}
+.sd41213{
+    background-image: url("img/312.jpg");
+    background-size: 100% 100%;
+}
+.sd41212{
+    width: 240px;
+    height: 180px;
+}
+.sd4u1 li{
+    text-align: center;
+    margin-top: 16px;
+    color: gray;
+    font-size: 16px;
+}
+.sd4u1 .sd4l1{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
+.sd4u2 li{
+    text-align: center;
+    margin-bottom: 14px;
+    color: gray;
+    font-size: 16px;
+}
+.sd4u2 .sd4l2{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
+.sd42{
+    width: 327px;
+    height: 410px;
+}
+.sd421{
+    width: 327px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    background-image: url("img/314.jpg");
+}
+.sd422{
+    width: 323px;
+    height: 368px;
+    background-image: url("img/sd3ybj.jpg");
+    margin: 0 auto;
+}
+.sd422 ul{
+    margin-top: 0;
+    overflow: hidden;
+}
+.sd422 li{
+    text-align: center;
+    margin-top: 14px;
+    font-size: 16px;
+}
+/*三结束*/
+.sd5{
+    width: 936px;
+    height: 39px;
+    margin: 40px auto 20px;
+    background-image: url("img/41.jpg");
+}
+/**/
+.sd6{
+    width: 905px;
+    height: 228px;
+    margin: 0 auto;
+}
+.sd61{
+    width: 275px;
+    height: 228px;
+    background-image: url("img/411.jpg");
+}
+.sd62{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.sd6 ul{}
+.sd6 ul li{
+    text-align: center;
+    margin-top: 20px;
+}
+/**/
+.dd1{
+    width: 960px;
+    height: 48px;
+    margin: 20px auto 0;
+    background-image: url("img/ddbj.jpg");
+    background-size: 100% 100%;
+}
+.dd1 p{
+    line-height: 54px;
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    margin-left: 80px;
+}
+/**/
+
+/**/
+.dd2{
+    width: 960px;
+    height: 130px;
+    margin: 0 auto;
+    background-color: white;
+    overflow: hidden;
+}
+#dd2{
+    width: 884px;
+    height: 96px;
+    margin: 17px auto 0;
+}
+.dd21{
+    width: 820px;
+    height: 96px;
+    margin-left: 20px;
+    overflow: hidden;
+    position: relative;
+}
+#dd2 ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#dd2 ul li{
+    float: left;
+    width: 144px;
+    height: 96px;
+    margin-right: 20px;
+}
+#dd2 a{
+    margin-top: 21px;
+}
+
+/**/
+
+footer{
+    width: 960px;
+    height: 146px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+.fp1{
+    margin-top: 28px;
+}
+.fp2{
+    margin-top: 14px;
+}
+.fp3{
+    margin-top: 6px;
+}
+/**wrap style end/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+page ruler
+
+
+
+

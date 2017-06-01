@@ -1,0 +1,109 @@
+复习:
+    1.
+        定时器:
+            1>.setInterval(fn,time):一直执行;
+
+            2>.setTimeout(fn,time):执行一次;
+
+        关闭定时器:
+            clearInterval(定时器的名字);
+            clearTimeout(定时器的名字);
+
+        定时器越点越快的bug怎么解决?
+            定时器先关后开;
+
+    2.
+        函数在哪里定义不重要,在哪里调用才重要;
+
+    3.
+        获取时间:
+            var oDate = new Date();
+            var oMonth = oDate.getMonth();//月;
+            var oWeek = oDate.getDay();//周几;
+
+    4. 元素内容:
+        obj.innerHTML
+------------------------------------------------------
+*****要运动[动起来]的元素必须要有定位;
+
+css3中的过渡:
+    此属性要过度谁就加给谁;
+    transition: 要过度的属性 时间 运动形式;
+
+json:用来存储多个元素;
+    格式:以键值对的形式出现;
+        var json = {
+            key1[键]:value1[值],
+            key2:value2,
+            key3:value3
+        };
+    取json值:
+
+    json的循环:for in
+
+    for in 循环不但可以循环json,也可以循环数组;for in 循环性能略低;
+
+    删除json中的某一项用 delete json.name;
+
+    循环:
+        for(){}
+        while(){}
+         for in
+
+json 和数组的区别:
+    数组和位置有关系; 数组有length;   for(){},while(){};
+    json和位置无关;  json没有length; for in
+
+物体信息:
+    物体到左边的距离: obj.offsetLeft;
+    物体到上边的距离: obj.offsetTop;
+    物体的宽度: obj.offsetWidth;
+    物体的高度: obj.offsetHeight;
+    内容高度: obj.scrollHeight;内容高度小于物体高度的时候取值物体高度,内容高度大于物体高度的时候,取值内容实际高度;
+
+关于||:
+    做判断使用,从左往右看,遇到真的就不再往后看,就去当前值,如果都是假的,取最后一个;
+
+事件对象:
+    存储或者描述了事件更加详细的信息;
+    ev:兼容chrome,firefox,ie9+;ie8--报undefined;
+    event:兼容chrome,IE系列,firefox报错;
+    var oEvent = ev || event;
+    鼠标坐标:
+        oEvent.clientX;水平轴坐标;
+        oEvent.clientY;垂直轴坐标;
+
+onmousemove:当鼠标移动的时候;触发频率非常高,复杂的代码不建议放到onmousemove事件里面执行;
+
+阻止浏览器默认事件:
+    return false;--->不兼容IE8--;
+
+IE8--阻止默认事件:
+    事件捕获:把所有的注意力都放到obj身上,点击页面任何地方都相当于在点击obj;
+        obj.setCapture();IE独有;
+     事件释放捕获:
+        obj.releaseCapture();IE独有;
+
+onmousedown:鼠标按下;
+onmousemove:鼠标移动;
+onmouseup:鼠标抬起;
+
+body-->document.body
+html--->document
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

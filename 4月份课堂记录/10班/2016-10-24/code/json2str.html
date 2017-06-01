@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+/*var json = {
+	a:1,
+	b:2,
+	c:3
+};
+var arr = [];
+for(var name in json){
+	arr.push(name + '=' + json[name]);
+}
+alert(arr.join('&&'));*/
+
+function json2str(json){
+	var arr = [];
+	for(var name in json){
+		arr.push(name + '=' + json[name]);
+	}
+	return arr.join('&');
+}
+console.log(json2str({a:1,b:2,c:3}));
+</script>
+</head>
+
+<body>
+</body>
+</html>
